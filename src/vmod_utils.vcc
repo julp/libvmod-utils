@@ -1,0 +1,5 @@
+$Module utils 3 Utility routines
+
+$Function STRING remove_qs(STRING)
+$Function STRING normalize_qs(STRING)
+$Function STRING resolve(IP)
