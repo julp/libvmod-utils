@@ -10,6 +10,6 @@ include(VarnishMOD)
 declare_vmod(
     INSTALL
     NAME utils
-    VCC src/vmod_utils.vcc
-    SOURCES src/vmod_utils.c
+    VCC ${PROJECT_SOURCE_DIR}/src/vmod_utils.vcc
+    SOURCES ${PROJECT_SOURCE_DIR}/src/vmod_utils.c
 )
