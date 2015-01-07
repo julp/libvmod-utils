@@ -17,6 +17,8 @@ make
 * `STRING resolve(IP)`: do a reverse resolution to get (if available) hostname for the given address
 * `STRING normalize_qs(STRING)`: remove empty query string, could also be replaced by `set req.url = regsub(req.url, "\?$", "");` which do not require any vmod
 * `STRING remove_qs(STRING)`: remove query string, could also be replaced by `set req.url = regsub(req.url, "\?.*", "");` which do not require any vmod
+* `BOOL startswith(STRING, STRING)`: does a string start with a given prefix?
+* `BOOL endswith(STRING, STRING)`: does a string end with a given suffix?
 
 resolve function may be useful to recognize some bots like msn/bing, eg:
 ```

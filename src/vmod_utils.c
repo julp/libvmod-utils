@@ -29,14 +29,32 @@ VCL_BOOL vmod_startswith(const struct vrt_ctx *ctx, VCL_STRING string, VCL_STRIN
     if (NULL == string || NULL == prefix) {
         return 0;
     } else {
-        size_t str_len, prefix_len;
+        size_t string_len, prefix_len;
 
-        str_len = strlen(str);
+        string_len = strlen(string);
         prefix_len = strlen(prefix);
-        if (prefix_len > str_len) {
+        if (prefix_len > string_len) {
             return 0;
         }
         return 0 == strncmp(string, prefix, prefix_len);
+    }
+}
+
+VCL_BOOL vmod_endswith(const struct vrt_ctx *ctx, VCL_STRING string, VCL_STRING suffix)
+{
+    CHECK_OBJ_NOTNULL(ctx, VRT_CTX_MAGIC);
+
+    if (NULL == string || NULL == suffix) {
+        return 0;
+    } else {
+        size_t string_len, suffix_len;
+
+        string_len = strlen(string);
+        suffix_len = strlen(suffix);
+        if (suffix_len > string_len) {
+            return 0;
+        }
+        return 0 == strcmp(string + string_len - suffix_len, suffix);
     }
 }
 
